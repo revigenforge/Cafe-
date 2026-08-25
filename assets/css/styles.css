@@ -202,6 +202,18 @@ a{ color:inherit }
 .strip__tel{ text-decoration:none; margin-left:auto }
 .strip__tel:hover{ color:var(--gold) }
 
+/* open / closed, worked out from the cafe's real 11–10 hours in IST */
+.strip__status{
+  display:inline-flex; align-items:center; gap:.42rem;
+  font-weight:700; letter-spacing:.04em;
+}
+.strip__status::before{
+  content:""; width:6px; height:6px; border-radius:50%;
+  background:currentColor; flex:none;
+}
+.strip__status.is-open{ color:#8FCB7B }
+.strip__status.is-shut{ color:#D89A8A }
+
 /* ═══ nav ══════════════════════════════════════════════════ */
 
 .nav{
@@ -584,6 +596,26 @@ a{ color:inherit }
   margin:0 0 var(--s3);
 }
 
+.visit__plus{
+  margin:0 0 var(--s3);
+  font-size:.86rem; color:var(--on-cream-soft);
+}
+.visit__plus code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size:.92em; letter-spacing:.02em;
+  background:rgba(139,80,37,.1);
+  padding:.15rem .4rem; border-radius:3px;
+  color:var(--espresso);
+}
+
+.visit__hours{
+  font-family:var(--display);
+  font-variation-settings:"opsz" 30,"SOFT" 26,"WONK" 0;
+  font-size:1.14rem; line-height:1.45;
+  margin:0 0 var(--s2);
+}
+.visit__hours strong{ font-weight:700; font-size:1.16em }
+
 .hours{ width:100%; border-collapse:collapse; font-size:.94rem }
 .hours th, .hours td{
   text-align:left; padding:.55rem 0;
@@ -604,6 +636,102 @@ a{ color:inherit }
 .contact a{ text-decoration:none; font-weight:600 }
 .contact a:hover{ color:var(--teak) }
 .visit__note{ font-size:.86rem; color:var(--on-cream-soft); margin:0; font-style:italic }
+
+/* ═══ booking ══════════════════════════════════════════════ */
+
+.book{
+  background:#fff;
+  border:1px solid rgba(59,42,30,.1);
+  border-radius:4px;
+  padding:clamp(1.5rem, 3vw, 2.75rem);
+  position:relative; overflow:hidden;
+  max-width:900px; margin-inline:auto;
+}
+/* the same amber line that sits under the counter */
+.book::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:3px;
+  background:linear-gradient(90deg, transparent, var(--amber), var(--teak), transparent);
+}
+
+.book__grid{
+  display:grid; gap:var(--s3);
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+}
+
+.field{ display:flex; flex-direction:column; gap:.4rem; margin:0 }
+.field--wide{ grid-column:1 / -1 }
+
+.field label{
+  font-size:.76rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--teak);
+}
+.field .opt{
+  text-transform:none; letter-spacing:.02em;
+  font-weight:400; color:var(--on-cream-soft);
+}
+
+.field input,
+.field select,
+.field textarea{
+  font-family:var(--body); font-size:1rem;
+  color:var(--espresso);
+  background:var(--cream);
+  border:1px solid rgba(59,42,30,.22);
+  border-radius:3px;
+  padding:.72rem .85rem;
+  min-height:48px;
+  width:100%;
+  transition:border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.field textarea{ resize:vertical; min-height:76px; line-height:1.5 }
+.field select{
+  appearance:none;
+  background-image:linear-gradient(45deg, transparent 50%, var(--teak) 50%),
+                   linear-gradient(135deg, var(--teak) 50%, transparent 50%);
+  background-position:calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size:5px 5px, 5px 5px;
+  background-repeat:no-repeat;
+  padding-right:2.5rem;
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover{ border-color:rgba(59,42,30,.4) }
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--teak);
+  box-shadow:0 0 0 3px rgba(139,80,37,.16);
+}
+.field input.is-bad,
+.field select.is-bad{ border-color:#A33B25; background:#FDF4F1 }
+.field input::placeholder,
+.field textarea::placeholder{ color:#756658 }   /* clears 4.5:1 on all three field backgrounds */
+.field select:disabled{ opacity:.6; cursor:not-allowed }
+
+.hint{ font-size:.8rem; color:var(--on-cream-soft) }
+.err{ font-size:.82rem; font-weight:600; color:#A33B25 }
+
+.book__foot{
+  display:flex; align-items:center; gap:var(--s3);
+  flex-wrap:wrap;
+  margin-top:var(--s4);
+  padding-top:var(--s3);
+  border-top:1px solid rgba(59,42,30,.12);
+}
+.book__alt{ margin:0; font-size:.9rem; color:var(--on-cream-soft) }
+.book__alt a{ font-weight:700; color:var(--espresso) }
+
+.book__status{ margin:var(--s2) 0 0; font-size:.92rem; font-weight:600 }
+.book__status.is-good{ color:#3F6B33 }
+.book__status.is-bad{ color:#A33B25 }
+.book__status:empty{ margin:0 }
+
+.book__fineprint{
+  margin:var(--s2) 0 0;
+  font-size:.82rem; font-style:italic;
+  color:var(--on-cream-soft);
+}
 
 /* ═══ footer ═══════════════════════════════════════════════ */
 
@@ -682,10 +810,11 @@ a{ color:inherit }
   .mark--nav{ justify-self:start; align-items:flex-start }
   .burger{ display:flex }
 
-  /* the address is in the Visit block and the footer — the strip
-     only needs to answer "are they open, and what's the number" */
+  /* the strip only needs to answer "are they open, and what's the
+     number" — the badge already carries the closing time, and the
+     address lives in the Visit block and the footer */
   .strip__in{ justify-content:space-between; font-size:.74rem; flex-wrap:nowrap }
-  .strip__in > .strip__item:first-child{ display:none }
+  .strip__in > .strip__item:not(.strip__tel){ display:none }
   .strip__tel{ margin-left:0; min-height:34px; display:flex; align-items:center }
   .strip__sep{ display:none }
 
