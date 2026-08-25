@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafe Mehrban — coffee, patio, kitchen</title>
+<meta name="description" content="Cafe Mehrban serves espresso, cold brews and a short kitchen menu on a plant-filled patio, or inside where it's cool and quiet.">
+<meta name="theme-color" content="#241812">
+
+<!--
+  ════════════════════════════════════════════════════════════════
+  EDIT HERE — every unverified value on this page, in one list.
+  Search the file for the word PLACEHOLDER to jump between them.
+
+    1. Street address       (nav strip, Visit section, footer, JSON-LD)
+    2. Phone number         (nav strip, Visit section, footer, JSON-LD)
+    3. Opening hours        (Visit section table, JSON-LD)
+    4. Google Maps link     (every "Get directions" button)
+    5. Instagram handle     (footer)
+    6. Menu prices          (the menu list carries no prices by design)
+
+  Everything else on this page — the name, the three scripts, the
+  rooms, the three photographed dishes, the colours — was taken
+  from the photographs and is accurate.
+  ════════════════════════════════════════════════════════════════
+-->
+
+<link rel="preload" href="assets/fonts/fraunces-6NUV8FyLNQOQZAnv9ZwIlOk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/karla-qkBbXvYC6trAT7RVLtw.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233B2A1E'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' text-anchor='middle' fill='%23E8C24A'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ─── thin contact strip ─────────────────────────────────── -->
+<div class="strip">
+  <div class="strip__in">
+    <span class="strip__item"><span class="ph">PLACEHOLDER — street, area, city</span></span>
+    <span class="strip__sep" aria-hidden="true">·</span>
+    <span class="strip__item">Open daily <span class="ph">PLACEHOLDER — 11am–11pm</span></span>
+    <a class="strip__item strip__tel" href="tel:+910000000000"><span class="ph">PLACEHOLDER — +91 XXXXX XXXXX</span></a>
+  </div>
+</div>
+
+<!-- ─── nav ────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <nav class="nav__side nav__side--l" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#rooms">Our space</a>
+    </nav>
+
+    <a class="mark mark--nav" href="#top" aria-label="Cafe Mehrban, home">
+      <span class="mark__cafe">Cafe</span>
+      <span class="mark__name">Mehrban</span>
+    </a>
+
+    <nav class="nav__side nav__side--r" aria-label="Secondary">
+      <a href="#visit">Visit</a>
+      <a class="btn btn--gold btn--sm" href="#visit">Get directions</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer">
+      <span class="burger__bars" aria-hidden="true"></span>
+      <span class="sr">Open menu</span>
+    </button>
+  </div>
+
+  <div class="drawer" id="drawer" hidden>
+    <a href="#menu">Menu</a>
+    <a href="#rooms">Our space</a>
+    <a href="#visit">Visit</a>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ─── hero ───────────────────────────────────────────────── -->
+<section class="hero">
+  <img class="hero__bg" src="assets/images/exterior-windows.jpg" alt="" aria-hidden="true" fetchpriority="high" width="1800" height="881">
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <div class="hero__in">
+    <!-- SIGNATURE: the signboard, rebuilt in type. Three scripts, gold on brown. -->
+    <div class="sign" id="sign">
+      <span class="sign__cafe">Cafe</span>
+      <h1 class="sign__name">Mehrban</h1>
+      <div class="sign__rule" aria-hidden="true"></div>
+      <p class="sign__scripts">
+        <span lang="pa">ਮੇਹਰਬਾਨ</span>
+        <span class="sign__dot" aria-hidden="true"></span>
+        <span lang="hi">मेहरबान</span>
+      </p>
+    </div>
+
+    <p class="hero__line">Mehrban means gracious.<br>It's also how we run the place.</p>
+    <p class="hero__sub">Espresso and cold brews, a short kitchen menu, and three different places to sit — a plant-filled patio, a shaded walkway, or inside where it's cool and quiet.</p>
+
+    <div class="hero__cta">
+      <a class="btn btn--gold" href="#menu">See the menu</a>
+      <a class="btn btn--ghost" href="#visit">Find us</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- ─── menu ───────────────────────────────────────────────── -->
+<section class="sec sec--cream sec--wedge" id="menu">
+  <div class="wrap">
+
+    <header class="head">
+      <p class="eyebrow"><span lang="pa">ਖਾਣਾ</span> <span class="eyebrow__dot" aria-hidden="true"></span> The kitchen</p>
+      <h2 class="h2">A short menu,<br>cooked to order</h2>
+      <p class="lede">Nothing sits under a lamp. The espresso bar runs all day; the kitchen sends out wraps, sliders and pasta from the same small counter.</p>
+    </header>
+
+    <ul class="dishes">
+      <li class="dish">
+        <div class="dish__ph"><img src="assets/images/wrap-and-sliders.jpg" alt="A grilled wrap cut in half beside a sesame slider and shoestring fries, with two ramekins of cocktail dip." loading="lazy" width="820" height="911"></div>
+        <div class="dish__body">
+          <h3 class="dish__name">Wrap &amp; sliders</h3>
+          <p class="dish__desc">A grilled tortilla wrap cut on the diagonal, a sesame brioche slider pinned with an olive, shoestring fries, and cocktail dip on the side. Enough for two if you're only a little hungry.</p>
+        </div>
+      </li>
+
+      <li class="dish">
+        <div class="dish__ph"><img src="assets/images/white-sauce-pasta.jpg" alt="Penne in white sauce with broccoli, cherry tomatoes and herbs on a white plate." loading="lazy" width="1100" height="585"></div>
+        <div class="dish__body">
+          <h3 class="dish__name">White sauce penne</h3>
+          <p class="dish__desc">Penne folded through a cream sauce with broccoli, cherry tomatoes and oregano. Ask for it with chicken or keep it vegetarian — it's built either way.</p>
+        </div>
+      </li>
+
+      <li class="dish">
+        <div class="dish__ph"><img src="assets/images/iced-tea.jpg" alt="A tall glass of iced tea, deep amber below and pale on top, garnished with mint and lemon." loading="lazy" width="820" height="1064"></div>
+        <div class="dish__body">
+          <h3 class="dish__name">Iced tea, poured over</h3>
+          <p class="dish__desc">Brewed strong, chilled, then poured over ice so it layers dark to pale in the glass. Mint and a wedge of lemon on top. The one to order on the patio.</p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- fuller list — no prices, see note -->
+    <div class="card">
+      <div class="card__cols">
+        <div class="card__col">
+          <h3 class="card__h">From the espresso bar</h3>
+          <ul class="list">
+            <li>Espresso, single or double</li>
+            <li>Americano</li>
+            <li>Cappuccino</li>
+            <li>Caffè latte</li>
+            <li>Flavoured latte — vanilla, hazelnut, caramel</li>
+            <li>Hot chocolate</li>
+          </ul>
+        </div>
+        <div class="card__col">
+          <h3 class="card__h">Cold</h3>
+          <ul class="list">
+            <li>Iced tea, poured over</li>
+            <li>Cold coffee</li>
+            <li>Iced latte</li>
+            <li>Italian soda</li>
+            <li>Fresh lime</li>
+          </ul>
+        </div>
+        <div class="card__col">
+          <h3 class="card__h">From the kitchen</h3>
+          <ul class="list">
+            <li>Wrap &amp; sliders</li>
+            <li>White sauce penne</li>
+            <li>Red sauce penne</li>
+            <li>Loaded fries</li>
+            <li>Grilled sandwich</li>
+            <li>Garlic bread</li>
+          </ul>
+        </div>
+      </div>
+      <p class="card__note"><strong>PLACEHOLDER —</strong> this list is a starting point, not the real card. Send the actual menu and prices and it drops straight in.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── the three rooms ────────────────────────────────────── -->
+<section class="sec sec--blush" id="rooms">
+  <div class="wrap">
+
+    <header class="head head--left">
+      <p class="eyebrow"><span lang="pa">ਥਾਂ</span> <span class="eyebrow__dot" aria-hidden="true"></span> The space</p>
+      <h2 class="h2">Three ways to sit</h2>
+      <p class="lede">You walk in through the gate, past the patio, into the hall. Pick whichever suits the weather and the company.</p>
+    </header>
+
+    <ol class="rooms">
+      <li class="room">
+        <div class="room__ph room__ph--gate">
+          <img src="assets/images/facade-entrance.jpg" alt="The entrance of Cafe Mehrban: a dark signboard with gold lettering above open wooden gates and a tiled walkway." loading="lazy" width="884" height="1000">
+        </div>
+        <div class="room__body">
+          <p class="room__step">At the gate</p>
+          <h3 class="room__h">The walkway</h3>
+          <p class="room__p">Two lanterns, the sign in three scripts, and tables set down a checkered walkway under the roof. The quietest seats in the place, and the ones that catch the evening.</p>
+        </div>
+      </li>
+
+      <li class="room">
+        <div class="room__ph">
+          <img src="assets/images/patio-seating.jpg" alt="Covered patio seating with glass-topped rattan tables, potted plants and a hedge screen." loading="lazy" width="470" height="588">
+        </div>
+        <div class="room__body">
+          <p class="room__step">Under the roof</p>
+          <h3 class="room__h">The patio</h3>
+          <p class="room__p">Rattan chairs and glass-topped tables, screened with hedge and filled with palms. Covered overhead, open at the sides, fans running when it's warm.</p>
+        </div>
+      </li>
+
+      <li class="room">
+        <div class="room__ph">
+          <img src="assets/images/interior-counter.jpg" alt="The indoor counter: fluted wood lit from within, black stone top, espresso machine and syrup bottles on shelves." loading="lazy" width="884" height="1094">
+        </div>
+        <div class="room__body">
+          <p class="room__step">Inside</p>
+          <h3 class="room__h">The hall</h3>
+          <p class="room__p">Air-conditioned, tiled, and kept spotless — the thing guests mention most. The counter runs warm along one wall with the machine at the end of it.</p>
+        </div>
+      </li>
+    </ol>
+
+  </div>
+</section>
+
+<!-- ─── counter band: the amber under-glow ─────────────────── -->
+<section class="counter">
+  <div class="counter__glow" aria-hidden="true"></div>
+  <div class="wrap counter__in">
+    <div class="counter__text">
+      <p class="eyebrow eyebrow--light">The counter</p>
+      <h2 class="h2 h2--light">Everything comes<br>off one bar</h2>
+      <p class="lede lede--light">The machine, the grinder, the syrups on the shelf behind it, and the cups stacked ready for takeaway. Order at the counter, sit anywhere, we'll bring it over.</p>
+    </div>
+
+    <dl class="counter__facts">
+      <div class="fact"><dt class="fact__k">Order at</dt><dd class="fact__v">The counter</dd></div>
+      <div class="fact"><dt class="fact__k">Takeaway</dt><dd class="fact__v">Yes</dd></div>
+      <div class="fact"><dt class="fact__k">Seating</dt><dd class="fact__v">Patio, walkway &amp; hall</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ─── visit ──────────────────────────────────────────────── -->
+<section class="sec sec--cream sec--wedge-top" id="visit">
+  <div class="wrap">
+
+    <header class="head">
+      <p class="eyebrow"><span lang="pa">ਆਓ ਜੀ</span> <span class="eyebrow__dot" aria-hidden="true"></span> Come by</p>
+      <h2 class="h2">Find us</h2>
+    </header>
+
+    <div class="visit">
+      <div class="visit__block">
+        <h3 class="visit__h">Where</h3>
+        <address class="visit__addr">
+          Cafe Mehrban<br>
+          <span class="ph">PLACEHOLDER — street and building</span><br>
+          <span class="ph">PLACEHOLDER — area, city, PIN</span>
+        </address>
+        <a class="btn btn--brown" href="#" data-maps>Get directions</a>
+      </div>
+
+      <div class="visit__block">
+        <h3 class="visit__h">When</h3>
+        <table class="hours">
+          <tbody>
+            <tr><th scope="row">Monday – Thursday</th><td><span class="ph">PLACEHOLDER</span></td></tr>
+            <tr><th scope="row">Friday – Sunday</th><td><span class="ph">PLACEHOLDER</span></td></tr>
+            <tr><th scope="row">Kitchen closes</th><td><span class="ph">PLACEHOLDER</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="visit__block">
+        <h3 class="visit__h">Reach us</h3>
+        <ul class="contact">
+          <li><span class="contact__k">Phone</span><a href="tel:+910000000000" class="ph">PLACEHOLDER — +91 XXXXX XXXXX</a></li>
+          <li><span class="contact__k">Instagram</span><a href="#" class="ph">PLACEHOLDER — @handle</a></li>
+        </ul>
+        <p class="visit__note">There's a QR code on every table for the menu.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- ─── footer ─────────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="wrap foot__in">
+
+    <div class="foot__brand">
+      <div class="mark mark--foot">
+        <span class="mark__cafe">Cafe</span>
+        <span class="mark__name">Mehrban</span>
+      </div>
+      <p class="foot__scripts"><span lang="pa">ਮੇਹਰਬਾਨ</span> <span class="sign__dot" aria-hidden="true"></span> <span lang="hi">मेहरबान</span></p>
+      <p class="foot__blurb">Gracious, in three scripts.</p>
+    </div>
+
+    <div class="foot__col">
+      <h3 class="foot__h">The cafe</h3>
+      <ul><li><a href="#menu">Menu</a></li><li><a href="#rooms">Our space</a></li><li><a href="#visit">Visit</a></li></ul>
+    </div>
+
+    <div class="foot__col">
+      <h3 class="foot__h">Find us</h3>
+      <ul>
+        <li><span class="ph">PLACEHOLDER — street, area</span></li>
+        <li><span class="ph">PLACEHOLDER — city, PIN</span></li>
+        <li><a href="#" data-maps>Open in Maps</a></li>
+      </ul>
+    </div>
+
+    <div class="foot__col">
+      <h3 class="foot__h">Reach us</h3>
+      <ul>
+        <li><a href="tel:+910000000000" class="ph">PLACEHOLDER — phone</a></li>
+        <li><a href="#" class="ph">PLACEHOLDER — Instagram</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="wrap foot__base">
+    <p>© <span id="yr">2026</span> Cafe Mehrban</p>
+    <p class="foot__demo">Demo site — contact details are placeholders.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
