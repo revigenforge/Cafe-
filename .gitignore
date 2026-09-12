@@ -7,5 +7,5 @@ build/
 *.log
 .DS_Store
 
-# the SQLite database is local state, not source
+# local state, not source
 server/data/
