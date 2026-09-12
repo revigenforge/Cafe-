@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from './context/AppContext.jsx';
-import api from './api/client.js';
+import api, { IS_DEMO } from './api/client.js';
 import { ErrorBox, Loading, initials } from './components/ui.jsx';
 import GlobalSearch from './components/GlobalSearch.jsx';
 import Login from './pages/Login.jsx';
@@ -154,6 +154,27 @@ export default function App() {
       <Sidebar counts={counts} open={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <div className="main">
+        {IS_DEMO && (
+          <div className="demobar">
+            <strong>Demo</strong>
+            <span>
+              Everything works, but it runs entirely in your browser — sample data only, nothing shared
+              with anyone else. The real CRM keeps its data in SQLite on your own server.
+            </span>
+            <span className="spacer" />
+            <button
+              className="btn btn--sm"
+              onClick={() => {
+                if (!confirm('Reset the demo back to its starting data?')) return;
+                api.resetDemo();
+                window.location.reload();
+              }}
+            >
+              Reset demo data
+            </button>
+          </div>
+        )}
+
         <header className="topbar">
           <button className="btn btn--ghost btn--sm menu-btn" onClick={() => setMenuOpen((v) => !v)} aria-label="Menu">☰</button>
           <GlobalSearch onPick={(path) => navigate(path)} />

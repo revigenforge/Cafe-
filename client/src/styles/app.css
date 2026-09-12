@@ -107,6 +107,19 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .main { display: flex; flex-direction: column; min-width: 0; }
 
+/* only rendered by the browser-only build */
+.demobar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 7px 20px;
+  background: #fff4dd; border-bottom: 1px solid #f0dcae;
+  color: var(--warn); font-size: 12.5px;
+}
+.demobar strong {
+  background: var(--warn); color: #fff;
+  padding: 1px 7px; border-radius: 3px;
+  font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+}
+
 .topbar {
   display: flex; align-items: center; gap: 12px;
   padding: 10px 20px;

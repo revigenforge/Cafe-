@@ -6,6 +6,8 @@
  * and nothing else in the client changes.
  */
 
+import { demoApi } from '../demo/engine.js';
+
 const USER_KEY = 'crm.user_id';
 
 export const getActingUserId = () => {
@@ -68,7 +70,7 @@ const qs = (params = {}) => {
   return s ? `?${s}` : '';
 };
 
-export const api = {
+const realApi = {
   qs,
   raw: request,
 
@@ -147,5 +149,17 @@ export const api = {
     commit: (payload) => request('/import/commit', { method: 'POST', body: payload }),
   },
 };
+
+/**
+ * The demo build swaps the whole transport for an in-browser store so
+ * the app can be published as a single page with no server. Behaviour
+ * is identical from every component's point of view — nothing above
+ * this line, and nothing in any page, knows which one it got.
+ *
+ * Off by default: a normal build talks to the real API.
+ */
+export const IS_DEMO = import.meta.env.VITE_DEMO === '1';
+
+export const api = IS_DEMO ? demoApi : realApi;
 
 export default api;
